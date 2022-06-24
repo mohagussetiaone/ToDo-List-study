@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TodoForm from "../components/TodoForm";
 import TodoTable from "../components/TodoTable";
 
-const Todo = () => {
+const Todo = (props) => {
   // mendeklarasikan suatu data didalam container todo agar reactif dengan menggunakan useState
   // menampung data useState untuk variabel todos, dan memberi untuk function setTodos
   const [todos, setTodos] = useState([

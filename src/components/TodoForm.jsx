@@ -12,6 +12,11 @@ const TodoForm = (props) => {
   // function onSubmit Handler
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    if (!input) {
+      alert("Harap Masukkan input");
+      return;
+    }
+
     props.fnTodos(input);
     setInput("");
   };
@@ -20,6 +25,9 @@ const TodoForm = (props) => {
     <form style={{ margin: "2em 0em" }} onSubmit={onSubmitHandler}>
       <input type="text" name="todo-baru" id="todoBaru" placeholder="Masukkan Input Anda" style={{ marginRight: "0.5em" }} input={input} onChange={inputHandler} />
       <button type="submit">Tambah To-Do</button>
+      <div className="info">
+        <p>{`Total List ${props.length}`}</p>
+      </div>
     </form>
   );
 };
